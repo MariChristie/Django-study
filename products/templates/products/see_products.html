@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,16 @@
 </head>
 <body>
     <h1> Hello, you are okay?</h1>
+
+    <form action="{% url 'see_products' %}" method="POST"> {% csrf_token %}
+        <input type="text" name="name" placeholder="Name">
+        <br>
+        <br>
+        <input type="number" name="age" placeholder="Age">
+        <br> 
+        <br>
+        <input type="submit" value="Send">
+    </form>
     
 </body>
 </html>
